@@ -1,8 +1,10 @@
 # Project 
-* Looked at 311 calls from the last two years to see if there were any seasonality to make staffing recommendaitons for dispatchers and agency workers
+* Analyzed 311 calls from the last two years to see if there were any seasonality to make staffing recommendaitons for dispatchers and agency workers
 
 # Database set up and exploration 
-* Used NYC open data lirbary to pull 311 calls for the last two years
+* Used NYC open data lirbary to pull 311 calls for the last two years:
+ 
+   https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
 * Due to the large amount of calls received in a given time period, we looked at the past two years for calls related to: 
   * Loud Music/Partying
   * Loud Talking 
@@ -53,7 +55,7 @@ Implemented Dash app to display finidngs based off of zipcode, and borough:
 * Additional option to filter complaint by zip code
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.31%20PM.png" width="850" height="350">
 
-## Total call type by borough 
+## Total call type by borough
 * Loud noise complaints had the highest amount of calls in every borough
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.53%20PM.png" width="850" height="350">
 
@@ -70,4 +72,15 @@ Implemented Dash app to display finidngs based off of zipcode, and borough:
 * Friday and Saturday are the days with the largest amount of calls 
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/call%20by%20DOW.png" width="450" height="450">
 
-#Finding s
+# Results and Findings:
+## Loud Noise: 
+* Overall Loud Music/Partying had the highest volume of calls among all boroughs. With Brooklyn and Manhattan having the most. We saw areas like the East Village and Williamburg neighborhoods were some of the loudest neighborhoods 
+* Loud noise complaints start to peak from May- September when it becomes warmer, school is out and there are more activities to do outside. June is the highest month with calls, and it starts to dip in August but picks back up in Septemebr when Universities are back in session
+* High majority of calls tend to be place mainly during 10pm- 1am, Friday and Saturday. 
+* Recommend higher staff to recieve call columns during the summer months, 10pm-1am on weekends, as well as the NYPD since they are the agency to investiage the calls 
+## For one address: 
+* New York has a policy if you are a property owner, you can request to have a tree planted on your street for free!The highest amount of calls for this request came in Booklyn, Queens and Staten Island. we saw a higher frequency of calls Staten Island and Brooklyn since they are areas with more space to plant trees in the area 
+* recommend to have more personal in Staten Island and Brooklyn to be available to plant the trees versus other boroughs
+* With requesting Large Appliance /Ectronoic removal, the only area we saw a majority of the calls come through Staten Island since resisdents of Brooklyn, Western Queens can request free curbside pick up of their appliances.
+## Other Complaints: 
+* Rat and Graffiti sightings were the two categories that did not have signifcant complaints  by time or area. Our assumptions are. Next step would to look how these two complaints have changed over the years and the see if there have any initives inplace to control Graffiti and rat/mouse sightings. 
