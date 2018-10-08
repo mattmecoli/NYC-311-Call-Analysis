@@ -8,8 +8,8 @@
   * Loud Talking 
   * Graffiti 
   * Request to Recyle Electronics 
-  * Planting a tree 
-  * Mouse/Rat Sighiting 
+  * Request for a tree 
+  * Mouse/Rat Sighting
 * Set up SQL database using SQL Alchemy using the following classes and relationships:
 ```class Complaint(db.Model):
     __tablename__= 'complaints'
@@ -46,5 +46,28 @@
     locations = db.relationship('Location', back_populates='borough')
     complaints= db.relationship('Complaint',back_populates='borough')
   ```
-* Created Dash app to demonstrate interactive charts of findings of overall calls by zip codes and by borough 
+# Dash Dashboard
+Implemented Dash app to display finidngs based off of zipcode, and borough: 
 
+## Total calls 
+* Additional option to filter complaint by zip code
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.31%20PM.png" width="850" height="350">
+
+## Total call type by borough 
+* Loud noise complaints had the highest amount of calls in every borough
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.53%20PM.png" width="850" height="350">
+
+# Time series analysis for load noise complaint:
+## Number of calls by hour
+* Highest number of calls come in from 10pm - 1am 
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Call%20by%20hour.png" width="450" height="350">
+
+## Number of calls by month
+* Calls peak during the summer month with June having the highest amount of calls 
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Calls%20by%20month.png" width="450" height="350">
+
+## Number of calls by DOW
+* Friday and Saturday are the days with the largest amount of calls 
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/call%20by%20DOW.png" width="450" height="450">
+
+#Finding s
