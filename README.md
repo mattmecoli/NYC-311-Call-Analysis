@@ -63,15 +63,15 @@ Implemented a Dash app built on Flask to display finidngs based off of zipcode, 
 # Time series analysis for load noise complaint:
 ## Number of calls by hour
 * Highest number of calls come in from 10pm - 1am 
-<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Call%20by%20hour.png" width="450" height="350">
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Call%20by%20hour.png" width="650" height="350">
 
 ## Number of calls by month
 * Calls peak during the summer month with June having the highest amount of calls 
-<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Calls%20by%20month.png" width="450" height="350">
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Calls%20by%20month.png" width="550" height="350">
 
 ## Number of calls by DOW
 * Friday and Saturday saw a spike in the number of calls 
-<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/call%20by%20DOW.png" width="450" height="450">
+<img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/call%20by%20DOW.png" width="650" height="450">
 
 # Results and Findings:
 ## Loud Noise: 
