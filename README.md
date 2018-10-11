@@ -1,5 +1,5 @@
 # Project 
-* Analyzed 311 calls from the last two years to see if there were any seasonality to make staffing recommendations for dispatchers and agency workers
+We analyzed NYC 311 call data from the last two years across seven categories to look for interesting trends and seasonalities in order to make staffing recommendations for dispatchers and agency workers.
 
 # Database set up and exploration 
 * Used NYC open data library to pull 311 calls for the last two years:
@@ -11,8 +11,9 @@
   * Graffiti 
   * Request to Recycle Electronics 
   * Request for a tree 
-  * Mouse/Rat Sighting
-* Set up SQL database using SQL Alchemy using the following classes and relationships:
+  * Mouse Sighting
+  * Rat Sighting
+* Set up SQL database using Flask/SQLAlchemy as an ORM with the following classes and relationships:
 ```class Complaint(db.Model):
     __tablename__= 'complaints'
     id = db.Column(db.Integer,primary_key = True)
@@ -49,14 +50,14 @@
     complaints= db.relationship('Complaint',back_populates='borough')
   ```
 # Dash Dashboard
-Implemented Dash app to display finidngs based off of zipcode, and borough: 
+Implemented a Dash app built on Flask to display finidngs based off of zipcode, and borough: 
 
 ## Total calls 
 * Additional option to filter complaint by zip code
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.31%20PM.png" width="850" height="350">
 
 ## Total call type by borough
-* Loud noise complaints had the highest amount of calls in every borough
+* Loud noise complaints had the highest amount of calls in every borough. Some zip codes had unusual patterns of calls. One Staten Island zipcode, for example, had a large number of recycling electronics request and very few other calls. Additionally, we were aware that our data suffered from a certain degree of observation bias. Rats aren't necessarily more common in certain zip codes than others so much as the residents of some zip codes might be more bothered or less accustomed to rats and more likely to call 311. 
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Screen%20Shot%202018-10-08%20at%204.06.53%20PM.png" width="850" height="350">
 
 # Time series analysis for load noise complaint:
@@ -69,18 +70,22 @@ Implemented Dash app to display finidngs based off of zipcode, and borough:
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/Calls%20by%20month.png" width="450" height="350">
 
 ## Number of calls by DOW
-* Friday and Saturday are the days with the largest amount of calls 
+* Friday and Saturday saw a spike in the number of calls 
 <img src="https://github.com/jarty13/Anlysis-of-311-calls-NYC-/blob/master/image/call%20by%20DOW.png" width="450" height="450">
 
 # Results and Findings:
 ## Loud Noise: 
-* Overall Loud Music/Partying had the highest volume of calls among all boroughs. With Brooklyn and Manhattan having the most. We saw areas such as the East Village and Williamsburg neighborhoods were some of the loudest neighborhoods 
+* Overall Loud Music/Partying had the highest volume of calls among all boroughs. With Brooklyn and Manhattan having the most. We saw areas such as the East Village and Williamsburg neighborhoods were some of the loudest neighborhoods, which is not suprising given the large numbers of younger residents in those neighborhoods. 
 * Loud noise complaints starts to peak from May- September when it becomes warmer, school's  are out and there are more activities to do outside. June is the highest month with calls, and it starts to dip in August but picks back up in September when Universities are back in session
 * High majority of calls tend to be placed during 10 pm- 1 am through Friday and Saturday. 
-* Recommend higher staff to receive call columns during the summer months, 10pm-1am on weekends, as well as the NYPD since they are the agency to investigate the calls 
+* Recommend higher staff to receive call columns during the summer months, 10pm-1am on weekends, as well as the NYPD since they are the agency to investigate the calls. We suspect the majority of these calls are Loud Noise or Loud Music complaints. 
 ## For one address: 
-* New York has a policy if you are a property owner, you can request to have a tree planted on your street for free! The highest amount of calls for this request came in Brooklyn, Queens, and Staten Island.Wwe saw a higher frequency of calls Staten Island and Brooklyn since they are areas with more space to plant trees in the area 
-* Recommend having more personal in Staten Island and Brooklyn to be available to plant the trees versus other boroughs
-* With requesting Large Appliance /Electronic removal, the only area we saw a majority of the calls come through Staten Island since residents of Brooklyn, Western Queens can request free curbside pick up of their appliances.
-## Other Complaints: 
-* Rat and Graffiti sightings were the two categories that did not have significant complaints by time or area. Our assumptions are since rodent sighting and graffiti are something people dont tend to call about since its an every day occurance in NYC. Next step would look at how these two complaints have changed over the years and then see if there have any initiatives in place to control Graffiti and rat/mouse sightings. 
+* New York has a policy if you are a property owner, you can request to have a tree planted on your street for free! The highest amount of calls for this request came in certain gentrifying neighbborhoods in Brooklyn, Queens, and Staten Island. We saw the highest frequency of calls in Staten Island and Brooklyn since they have slightly more room.
+* As such, we'd suggest having more personal in Staten Island and Brooklyn to be available to plant the trees versus other boroughs. 
+* This also provides some insight into the sort of data that can signal the gentrifying effect occuring in a given area.
+* With requesting Large Appliance/Electronic removal, the only area we saw a majority of the calls come through Staten Island.
+## An additional note:
+* We found that people enjoyed our Dash app because of its personal level of interactivity. People were able to search the zip code they lived in and get some insight into how their neighborhood behaves. 
+# Next Steps
+* We scraped zipcodes by neighborhood from a NYC Department of Health website and our next step would be to bin zipcodes into neighborhoods and do additional analysis on that level. 
+
