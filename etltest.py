@@ -45,11 +45,6 @@ def location_objects(data):
         # db.session.add(location_2)
     db.session.commit()
 
-
-# def location_name (data_2):
-#     for n in data_2:
-#         if n
-
 def complaint_objects(data):
     # complaint_list =[]
 
