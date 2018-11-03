@@ -1,19 +1,34 @@
-# Project 
-We analyzed NYC 311 call data from the last two years across seven categories to look for interesting trends and seasonalities in order to make staffing recommendations for dispatchers and agency workers.
+# Project Overview  
+We analyzed NYC 311 call data from the last two years across seven categories to look for interesting trends and seasonalities in order to make staffing recommendations for dispatchers and agency workers. 
 
-# Database set up and exploration 
-* Used NYC open data library to pull 311 calls for the last two years:
+## The Data and Exploratory Data Analysis 
+
+Our database is 45 MB and hasn’t been uploaded here, but should be reproducible using the code here. If anything doesn't work, feel free to reach out to me, and I'll take a look. 
+
+The primary data came from an NYC open data library to pull 311 calls for the last two years:
  
    https://data.cityofnewyork.us/Social-Services/311-Service-Requests-from-2010-to-Present/erm2-nwe9
-* Due to a large number of calls received in a given time period, we looked at the past two years for calls related to: 
+   
+The data contained a number of features including call data and geographic information. Much of this wasn't useful for our purposes and was dropped. 
+
+Because of the large number of calls, we limited our data to the past two years for calls related to seven categories: 
+
   * Loud Music/Partying
   * Loud Talking 
   * Graffiti 
   * Request to Recycle Electronics 
-  * Request for a tree 
+  * Tree Requests  
   * Mouse Sighting
   * Rat Sighting
-* Set up SQL database using Flask/SQLAlchemy as an ORM with the following classes and relationships:
+
+Additionally, we began the process of gathering other information based upon 'neighborhoods', which are essentially intermediary groupings of zipcodes within boroughs.  The neighborhoods were scraped as can be seen in neighborhoods.py. 
+  
+## ETL & Database Architecture 
+
+We pulled the data from the website as a csv file (although we could also have made API requests for JSON, the CSV download was significantly faster). 
+
+We removed a number of unnecessary columns, filled NaN values, and fixed a few smaller issues (datatype consistency, incorrect naming) before we initalized a SQLite database using Flask/SQLAlchemy as an ORM and persisted the data into the database with the following classes and relationships:
+
 ```class Complaint(db.Model):
     __tablename__= 'complaints'
     id = db.Column(db.Integer,primary_key = True)
@@ -50,7 +65,7 @@ We analyzed NYC 311 call data from the last two years across seven categories to
     complaints= db.relationship('Complaint',back_populates='borough')
   ```
 # Dash Dashboard
-Implemented a Dash app built on Flask to display finidngs based off of zipcode, and borough: 
+We implemented a Dash app built on top of Flask to display our findings based off of zipcode and borough.
 
 ## Total calls 
 * Additional option to filter complaint by zip code
@@ -84,8 +99,38 @@ Implemented a Dash app built on Flask to display finidngs based off of zipcode, 
 * As such, we'd suggest having more personal in Staten Island and Brooklyn to be available to plant the trees versus other boroughs. 
 * This also provides some insight into the sort of data that can signal the gentrifying effect occuring in a given area.
 * With requesting Large Appliance/Electronic removal, the only area we saw a majority of the calls come through Staten Island.
+
 ## An additional note:
 * We found that people enjoyed our Dash app because of its personal level of interactivity. People were able to search the zip code they lived in and get some insight into how their neighborhood behaves. 
-# Next Steps
+
+
+## Next Steps
 * We scraped zipcodes by neighborhood from a NYC Department of Health website and our next step would be to bin zipcodes into neighborhoods and do additional analysis on that level. 
 
+
+## Libraries & Software
+
+#### SQLAlchemy 
+Our object relational mapper (ORM) of choice here. 
+
+Docs/install: https://docs.sqlalchemy.org/en/latest/intro.html
+
+#### Flask
+Flask “is a web framework. This means flask provides you with tools, libraries and technologies that allow you to build a web application.” Flask is a micro-framework because it has little to no dependence on external libraries. 
+
+Docs/install: http://flask.pocoo.org/docs/1.0/installation/
+
+#### Flash-SQLAlchemy extension 
+Makes interacting with Flask/SQLAlchemy simpler and easier. 
+
+Docs/install: https://pypi.org/project/Flask-SQLAlchemy/
+
+#### Dash
+Dash is built by Plotly and allows you to build attractive, analytical web applications with a Python framework and no JavaScript required. Can be built on top of Flask/SQLAlchemy as was done here. 
+
+Docs/install: https://dash.plot.ly/installation
+
+#### SQLite 
+A small, fast, reliable (and free!) database software, and the most widely deployed database in the world. A great place to start working with relational databases. 
+
+Docs/install: http://www.sqlitetutorial.net/download-install-sqlite/
