@@ -71,7 +71,18 @@ We implemented a Dash app built on top of Flask to display our findings based of
 
 You can see the dashboard video in action here: 
 
-![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dashboard_vid)
+Call Volume by Zip
+
+![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dashboard_vid_1.gif)
+
+Call Volume by Borough
+
+![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dashboard_vid_2.gif)
+
+Call Volumes by Type 
+
+![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dashboard_vid_3.gif)
+
 
 ## Total calls 
 This dropdown allowed us to look at each zipcode's call volume. This was one of the areas that people enjoyed the most during our presentation because they could look at thier own zipcode. It was both interactive and personal. 
