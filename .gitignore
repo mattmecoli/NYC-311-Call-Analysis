@@ -1,0 +1,15 @@
+__pycache__/
+.DS_Store
+ignored/
+seed.py
+config.py
+
+calls/app.db
+calls/everything.csv
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Jupyter Notebook
+.ipynb_checkpoints
