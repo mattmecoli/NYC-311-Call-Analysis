@@ -71,17 +71,17 @@ We implemented a Dash app built on top of Flask to display our findings based of
 
 You can see the dashboard video in action here: 
 
-![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/images/dashboard_vid)
+![Dash_Vid](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dashboard_vid)
 
 ## Total calls 
 This dropdown allowed us to look at each zipcode's call volume. This was one of the areas that people enjoyed the most during our presentation because they could look at thier own zipcode. It was both interactive and personal. 
 
-![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/images/dropdown.png)
+![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/dropdown.png)
 
 ## Total call type by borough
 This allowed us to take a borough-level views of calls by category. While loud noise complaints had the highest amount of calls in every borough, some other trends were notable. Brooklyn has more people, but loud talking is a bigger complain in Manhattan. Tree requests were more common in gentrifying areas. Some zip codes had unusual patterns of calls. One Staten Island zipcode, for example, had almost all of the recycling electronics requests and very few other calls. 
 
-![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/images/borough.png)
+![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/borough.png)
 
 ## Call volume for loud noise complaints:
 
@@ -91,18 +91,18 @@ Additioanlly, because we wanted to consider whether or not the data would be use
 
 Highest number of calls come in from 10pm - 1am 
 
-![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/images/hour.png)
+![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/hour.png)
 
 ### Number of calls by day of the week
 
 Friday and Saturday see a spike in the number of calls 
 
-![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/images/day.png)
+![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/day.png)
 
 ### Number of calls by month
 * Calls peak during the summer month with June having the highest amount of calls 
 
-![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/images/month.png)
+![Image](https://github.com/mattymecks/NYC-311-Call-Analysis/blob/master/images/month.png)
 
 
 ## Results and Findings:
